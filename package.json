@@ -1,7 +1,7 @@
 {
-    "name": "EXAMPLE NAME",
+    "name": "custom_button",
     "version": "1.0.0",
-    "description": "EXAMPLE DESCRIPTION. PLEASE CHANGE THIS.",
+    "description": "Custom decision button",
     "keywords": [],
     "author": "",
     "license": "ISC",
