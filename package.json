@@ -13,6 +13,6 @@
         "start": "./node_modules/.bin/eko studio test -p 8080"
     },
     "devDependencies": {
-        "eko-cli": "*"
+        "eko-cli": "2.5.4"
     }
 }
