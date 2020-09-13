@@ -16,16 +16,16 @@ if (typeof developerCode === 'function') {
     developerApp = developerCode;
 }
 
-// Expose variables on ctx so will be available for sub apps.
-function addVariablesToCtx(ctx) {
-    return ekoStudioApp.addVariablesToCtx(ctx);
-}
+// Get the intro nodes amd normalize to be an array
+let introNodes = developerApp.introNodes || ekoStudioApp.introNodes;
+introNodes = Array.isArray(introNodes) ? introNodes : [introNodes];
 
 function safeCall(f) {
     if (typeof f === 'function') {
         const args = Array.prototype.slice.call(arguments, 1);
         return f.apply(null, args);
     }
+
     return true;
 }
 
@@ -37,11 +37,12 @@ export default {
     // If your hook is doing anything asynchronous you need to return a promise. You can use the when.js libaray
     // that is exposed on the ctx object (e.g. return ctx.when.promise())
     onLoad: function(ctx) {
-        ctx = addVariablesToCtx(ctx);
+        ctx = ekoStudioApp.addVariablesToCtx(ctx);
 
-        return ekoStudioApp.onLoad(ctx).then(function() {
-            return safeCall(developerApp.onLoad, ctx);
-        });
+        return ekoStudioApp.onLoad(ctx)
+            .then(function() {
+                return safeCall(developerApp.onLoad, ctx);
+            });
     },
 
     // The onPlayerInit hook runs after the player was loaded.
@@ -50,7 +51,7 @@ export default {
     // If your hook is doing anything asynchronous you need to return a promise. You can use the when.js libaray
     // that is exposed on the ctx object (e.g. return ctx.when.promise())
     onPlayerInit: function(ctx) {
-        return ekoStudioApp.onPlayerInit(ctx).then(function() {
+        return ekoStudioApp.onPlayerInit(ctx, developerApp).then(function() {
             // if the developer implemented onInit it is called with two arguments
             if (typeof developerApp.onInit === 'function') {
                 return safeCall(developerApp.onInit, ctx.player, ctx);
@@ -58,6 +59,37 @@ export default {
             // if the developer provided onPlayerInit it is called with the context for backward compatibility
             return safeCall(developerApp.onPlayerInit, ctx);
         });
+    },
+
+    // New fastload-compatible hooks
+    /////////////////////////////////
+
+    onPreInit: function(ctx) {
+        ctx = ekoStudioApp.addVariablesToCtx(ctx);
+        ctx.introNodes = introNodes;
+        return safeCall(developerApp.onPreInit, ctx);
+    },
+    onPostInit: function(ctx) {
+        return ekoStudioApp.loadIntroNodes(ctx)
+            .then(function() {
+                return ekoStudioApp.appendHead(ctx, developerApp);
+            })
+            .then(function(head) {
+                ctx.app.head = head;
+                return safeCall(developerApp.onPostInit, ctx.player, ctx);
+            });
+    },
+    onIntroReady: function(ctx) {
+        return ekoStudioApp.onIntroReady(ctx)
+            .then(function() {
+                return safeCall(developerApp.onIntroReady, ctx.player, ctx);
+            });
+    },
+    onReady: function(ctx) {
+        return ekoStudioApp.loadApp(ctx)
+            .then(function() {
+                return safeCall(developerApp.onReady, ctx.player, ctx);
+            });
     },
 
     studioPlayerOptions: ekoStudioApp.playerOptions,

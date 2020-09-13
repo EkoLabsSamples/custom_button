@@ -4,7 +4,7 @@ version: preview/checkout_default_revision
 revision: -1
 title: &#92;
 subtitle: &#92;
-projectUrl: ""
-embedUrl: ""
+projectUrl: https://video.eko.com/v/MO1BdA
+embedUrl: https://video.eko.com/v/MO1BdA/embed
 thumbnailUrl: ""
-folderName: projects//bf73a840-198a-11e9-9913-636fbff8b76c
+folderName: projects/us-east-1:66ab011c-0aee-493a-bb6c-cad208541309/bf73a840-198a-11e9-9913-636fbff8b76c

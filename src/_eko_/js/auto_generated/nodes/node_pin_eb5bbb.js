@@ -4,18 +4,21 @@ export default {
     source: ivds.vid_video_pin_8935f2,
     data: {
                     insights: {
-                uid: 'd32e4b60-08ff-11e9-af25-13bebeecc463'
+                uid: '5c3f244c-e574-4001-8b22-3baef36892c6'
                             },
                             decision: {
                 startTime: 7.725,
-                 
-                    endTime: 16.825,
-                                children: [
+                                autoSelectLoopingNode: false,
+                children: [
                                 ],
                 defaults: [
                                 ],
                 _channelsDefaults: [
                                 ]
-            }
-            }
+            },
+                            studio: {},
+                    },
+    prefetch: [
+                  
+    ]
 };

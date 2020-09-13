@@ -4,18 +4,21 @@ export default {
     source: ivds.vid_video_scar_2999b2,
     data: {
                     insights: {
-                uid: 'd2b69fd0-08fe-11e9-af25-13bebeecc463'
+                uid: '5c3f244c-c6c4-4c4b-b359-3baef36892c6'
                             },
                             decision: {
                 startTime: 10.811,
-                 
-                    endTime: 19.911,
-                                children: [
+                                autoSelectLoopingNode: false,
+                children: [
                                 ],
                 defaults: [
                                 ],
                 _channelsDefaults: [
                                 ]
-            }
-            }
+            },
+                            studio: {},
+                    },
+    prefetch: [
+                  
+    ]
 };

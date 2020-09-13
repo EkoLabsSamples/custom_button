@@ -1,20 +1,7 @@
 {
-    "apiVersion": "3.25.0-83",
+    "apiVersion": "3.31.0",
+    "schemaVersion": "1.0.0",
     "guiControllers": [
-        {
-            "id": "node_beginning_2430df",
-            "type": "DECISION",
-            "config": {
-                "showInNodes": [
-                    "node_beginning_2430df"
-                ],
-                "hideInNodesEnd": [
-                    "node_beginning_2430df"
-                ],
-                "userSelectionDisappearDelay": 2.5,
-                "autoSelectionDisappearDelay": 3.5
-            }
-        },
         {
             "id": "node_hat_ad9e9b",
             "type": "DECISION",
@@ -44,6 +31,20 @@
             }
         },
         {
+            "id": "node_beginning_2430df",
+            "type": "DECISION",
+            "config": {
+                "showInNodes": [
+                    "node_beginning_2430df"
+                ],
+                "hideInNodesEnd": [
+                    "node_beginning_2430df"
+                ],
+                "userSelectionDisappearDelay": 2.5,
+                "autoSelectionDisappearDelay": 3.5
+            }
+        },
+        {
             "id": "node_pin_eb5bbb",
             "type": "DECISION",
             "config": {
@@ -60,7 +61,7 @@
     ],
     "gui": [
         {
-            "id": "d2b76320-08fe-11e9-af25-13bebeecc463",
+            "id": "5c3f244d-c5a0-4c28-9605-3baef36892c6",
             "component": "EkoGroup",
             "props": {
                 "config": {
@@ -71,10 +72,10 @@
                     "transitionInDuration": 0.60000002384186,
                     "transitionOutDuration": 0.60000002384186,
                     "children": [
-                        "timer_beginning_851a3e",
-                        "button_beginning_e3bdbd",
+                        "button_beginning_6c2e1e",
                         "button_beginning_34a305",
-                        "button_beginning_6c2e1e"
+                        "button_beginning_e3bdbd",
+                        "timer_beginning_851a3e"
                     ]
                 }
             }
@@ -102,6 +103,11 @@
                     "handlers": [
 
                     ]
+                },
+                "zOrder": 0,
+                "interactable": false,
+                "studio": {
+
                 }
             },
             "component": "LegacyPureTimer"
@@ -138,6 +144,7 @@
                         {
                             "type": "DECISION_SELECT",
                             "decisionId": "node_beginning_2430df",
+                            "linger": true,
                             "targetNode": "node_hat_ad9e9b",
                             "connectOn": "NODE_END"
                         },
@@ -155,13 +162,20 @@
                                 "trackAnalytics": true,
                                 "analyticsData": {
                                     "interactionElementName": "button_beginning_e3bdbd",
+                                    "interactionElementText": "Hat",
                                     "interactionTriggerType": "click",
                                     "interactionActionType": "decision",
-                                    "interactionSelectedNodeId": "node_hat_ad9e9b"
+                                    "interactionSelectedNodeId": "node_hat_ad9e9b",
+                                    "interactionConnectOn": "NODE_END"
                                 }
                             }
                         }
                     ]
+                },
+                "zOrder": 1,
+                "interactable": true,
+                "studio": {
+
                 }
             },
             "component": "LegacyDefaultButton"
@@ -198,6 +212,7 @@
                         {
                             "type": "DECISION_SELECT",
                             "decisionId": "node_beginning_2430df",
+                            "linger": true,
                             "targetNode": "node_scar_099403",
                             "connectOn": "NODE_END"
                         },
@@ -215,13 +230,20 @@
                                 "trackAnalytics": true,
                                 "analyticsData": {
                                     "interactionElementName": "button_beginning_34a305",
+                                    "interactionElementText": "Scar",
                                     "interactionTriggerType": "click",
                                     "interactionActionType": "decision",
-                                    "interactionSelectedNodeId": "node_scar_099403"
+                                    "interactionSelectedNodeId": "node_scar_099403",
+                                    "interactionConnectOn": "NODE_END"
                                 }
                             }
                         }
                     ]
+                },
+                "zOrder": 2,
+                "interactable": true,
+                "studio": {
+
                 }
             },
             "component": "LegacyDefaultButton"
@@ -258,6 +280,7 @@
                         {
                             "type": "DECISION_SELECT",
                             "decisionId": "node_beginning_2430df",
+                            "linger": true,
                             "targetNode": "node_pin_eb5bbb",
                             "connectOn": "NODE_END"
                         },
@@ -275,16 +298,28 @@
                                 "trackAnalytics": true,
                                 "analyticsData": {
                                     "interactionElementName": "button_beginning_6c2e1e",
+                                    "interactionElementText": "Pin",
                                     "interactionTriggerType": "click",
                                     "interactionActionType": "decision",
-                                    "interactionSelectedNodeId": "node_pin_eb5bbb"
+                                    "interactionSelectedNodeId": "node_pin_eb5bbb",
+                                    "interactionConnectOn": "NODE_END"
                                 }
                             }
                         }
                     ]
+                },
+                "zOrder": 3,
+                "interactable": true,
+                "studio": {
+
                 }
             },
             "component": "LegacyDefaultButton"
         }
+    ],
+    "fonts": [
+        "Nixie One",
+        "Dosis",
+        "Roboto Slab"
     ]
 }
