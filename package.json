@@ -2,7 +2,9 @@
     "name": "custom_button",
     "version": "1.0.0",
     "description": "Custom decision button",
-    "keywords": [],
+    "keywords": [
+
+    ],
     "author": "",
     "license": "ISC",
     "eko": {
@@ -10,9 +12,9 @@
         "shortid": "MO1BdA",
         "APIVersion": "4.0.0"
     },
-    "main": "./src/js/app.js",
+    "main": ".\/src\/js\/app.js",
     "scripts": {
-        "start": "./node_modules/.bin/eko studio test -p 8080"
+        "start": ".\/node_modules\/.bin\/eko studio test -p 8080"
     },
     "devDependencies": {
         "eko-cli": "^2.11"
