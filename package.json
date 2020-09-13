@@ -2,21 +2,19 @@
     "name": "custom_button",
     "version": "1.0.0",
     "description": "Custom decision button",
-    "keywords": [
-
-    ],
+    "keywords": [],
     "author": "",
     "license": "ISC",
     "eko": {
         "id": "bf73a840-198a-11e9-9913-636fbff8b76c",
         "shortid": "MO1BdA",
-        "APIVersion": "3.31.0"
+        "APIVersion": "4.0.0"
     },
-    "main": ".\/src\/js\/app.js",
+    "main": "./src/js/app.js",
     "scripts": {
-        "start": ".\/node_modules\/.bin\/eko studio test -p 8080"
+        "start": "./node_modules/.bin/eko studio test -p 8080"
     },
     "devDependencies": {
-        "eko-cli": "2.5.4"
+        "eko-cli": "^2.11"
     }
 }
