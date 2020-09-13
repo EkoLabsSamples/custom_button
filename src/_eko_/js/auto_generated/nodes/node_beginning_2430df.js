@@ -7,7 +7,7 @@ export default {
                 uid: '5c3f244c-cf18-4eb9-a64e-3baef36892c6'
                             },
                             decision: {
-                startTime: 14.493,
+                startTime: 5.072,
                                 autoSelectLoopingNode: false,
                 children: [
                                     'node_pin_eb5bbb'
